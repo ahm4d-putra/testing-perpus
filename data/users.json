@@ -1,0 +1,33 @@
+[
+  {
+    "id": "user123",
+    "username": "john_doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "full_name": "John Doe",
+    "member_since": "2025-01-15",
+    "borrowed_books": [2],
+    "borrow_history": []
+  },
+  {
+    "id": "user456",
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "password": "password456",
+    "full_name": "Jane Smith",
+    "member_since": "2025-02-20",
+    "borrowed_books": [6],
+    "borrow_history": []
+  },
+  {
+    "id": "admin001",
+    "username": "admin",
+    "email": "admin@library.com",
+    "password": "admin123",
+    "full_name": "Library Administrator",
+    "member_since": "2025-01-01",
+    "borrowed_books": [],
+    "borrow_history": [],
+    "is_admin": true
+  }
+]

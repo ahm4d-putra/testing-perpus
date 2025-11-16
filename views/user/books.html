@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Buku - Perpustakaan Digital</title>
+    <meta name="description" content="Jelajahi koleksi lengkap buku perpustakaan kami. Cari, filter, dan pinjam buku favorit Anda dengan mudah.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="navbar-brand">
+                <img src="../../public/img/logo.png" alt="Perpustakaan Logo">
+                <span>Perpustakaan</span>
+            </div>
+            <ul class="navbar-nav">
+                <li><a href="../landing/index.html">Beranda</a></li>
+                <li><a href="books.html" class="active">Koleksi Buku</a></li>
+                <li><a href="../admin/login.html" class="btn btn-outline">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section style="background: var(--primary-color); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Koleksi Buku</h1>
+            <p style="font-size: 1.125rem; opacity: 0.9;">Temukan buku favorit Anda dari ribuan koleksi terbaik kami</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="container">
+        <div class="search-filter" data-aos="fade-up">
+            <form class="search-form" id="searchForm">
+                <input type="text" id="searchInput" class="search-input" placeholder="Cari buku berdasarkan judul, penulis, atau kata kunci...">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Cari
+                </button>
+            </form>
+            
+            <div class="filter-group">
+                <label for="categoryFilter">Kategori:</label>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="">Semua Kategori</option>
+                    <!-- Categories will be loaded here -->
+                </select>
+                
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter" class="filter-select">
+                    <option value="">Semua Status</option>
+                    <option value="available">Tersedia</option>
+                    <option value="borrowed">Dipinjam</option>
+                </select>
+                
+                <button type="button" id="resetFilter" class="btn btn-outline">
+                    <i class="fas fa-refresh"></i> Reset
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Grid -->
+    <section class="container">
+        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <span id="bookCount" style="color: var(--text-light);">Menampilkan semua buku</span>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <label for="sortBy">Urutkan:</label>
+                <select id="sortBy" class="filter-select">
+                    <option value="title">Judul A-Z</option>
+                    <option value="author">Penulis A-Z</option>
+                    <option value="year">Tahun Terbaru</option>
+                    <option value="category">Kategori</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="booksGrid" class="book-grid">
+            <!-- Books will be loaded here -->
+        </div>
+        
+        <!-- Loading -->
+        <div id="loading" style="text-align: center; padding: 4rem 0; display: none;">
+            <div class="loading" style="margin: 0 auto 1rem;"></div>
+            <p>Memuat buku...</p>
+        </div>
+        
+        <!-- No Results -->
+        <div id="noResults" style="text-align: center; padding: 4rem 0; display: none;">
+            <i class="fas fa-book-open" style="font-size: 4rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+            <h3 style="margin-bottom: 1rem;">Tidak Ada Hasil</h3>
+            <p style="color: var(--text-light);">Tidak ada buku yang sesuai dengan pencarian Anda. Coba kata kunci lain.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Perpustakaan Digital. Hak Cipta Dilindungi.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Menginspirasi Dunia Melalui Literasi</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="../../public/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Load books and categories on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBooks();
+            loadCategoriesFilter();
+            
+            // Search form
+            document.getElementById('searchForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                filterBooks();
+            });
+            
+            // Filter events
+            document.getElementById('categoryFilter').addEventListener('change', filterBooks);
+            document.getElementById('statusFilter').addEventListener('change', filterBooks);
+            document.getElementById('sortBy').addEventListener('change', sortBooks);
+            document.getElementById('resetFilter').addEventListener('click', resetFilters);
+        });
+    </script>
+</body>
+</html>

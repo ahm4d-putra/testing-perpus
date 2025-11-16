@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Perpustakaan Digital</title>
+    <meta name="description" content="Login admin untuk mengelola sistem perpustakaan digital.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/admin.css">
+    
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-form" data-aos="fade-up">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="../../public/img/logo.png" alt="Perpustakaan Logo" style="width: 80px; height: 80px; margin-bottom: 1rem;">
+                <h1 style="font-size: 1.5rem; color: var(--text-dark);">Admin Login</h1>
+                <p style="color: var(--text-light); margin-top: 0.5rem;">Masuk untuk mengelola perpustakaan</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-user" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);"></i>
+                        <input type="text" id="username" class="form-input" placeholder="Masukkan username" style="padding-left: 3rem;" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);"></i>
+                        <input type="password" id="password" class="form-input" placeholder="Masukkan password" style="padding-left: 3rem;" required>
+                        <button type="button" id="togglePassword" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-light); cursor: pointer;">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="rememberMe">
+                        <span style="font-size: 0.875rem; color: var(--text-light);">Ingat saya</span>
+                    </label>
+                    <a href="#" style="font-size: 0.875rem; color: var(--primary-color);">Lupa password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-light); font-size: 0.875rem;">
+                    Kembali ke <a href="../landing/index.html" style="color: var(--primary-color);">Beranda</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Animation -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1;">
+        <div style="position: absolute; width: 100%; height: 100%; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"books\" patternUnits=\"userSpaceOnUse\" width=\"20\" height=\"20\"><rect width=\"20\" height=\"20\" fill=\"none\"/><rect x=\"2\" y=\"8\" width=\"3\" height=\"8\" fill=\"rgba(255,255,255,0.1)\"/><rect x=\"6\" y=\"6\" width=\"3\" height=\"10\" fill=\"rgba(255,255,255,0.05)\"/><rect x=\"10\" y=\"7\" width=\"3\" height=\"9\" fill=\"rgba(255,255,255,0.08)\"/><rect x=\"14\" y=\"5\" width=\"3\" height=\"11\" fill=\"rgba(255,255,255,0.03)\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23books)\"/></svg>') repeat;"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Admin JavaScript -->
+    <script src="../../public/js/admin.js"></script>
+    
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+        
+        // Handle login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleAdminLogin();
+        });
+    </script>
+</body>
+</html>

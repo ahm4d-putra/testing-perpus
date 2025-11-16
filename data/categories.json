@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Fiction",
+    "description": "Novels, short stories, and imaginative literature",
+    "book_count": 4
+  },
+  {
+    "id": 2,
+    "name": "Self-Development",
+    "description": "Personal growth, productivity, and self-improvement",
+    "book_count": 2
+  },
+  {
+    "id": 3,
+    "name": "Biography",
+    "description": "Life stories and memoirs of notable individuals",
+    "book_count": 2
+  },
+  {
+    "id": 4,
+    "name": "History",
+    "description": "Historical events, periods, and analysis",
+    "book_count": 1
+  },
+  {
+    "id": 5,
+    "name": "Mystery",
+    "description": "Crime novels, thrillers, and suspense stories",
+    "book_count": 1
+  },
+  {
+    "id": 6,
+    "name": "Science Fiction",
+    "description": "Future worlds, technology, and speculative fiction",
+    "book_count": 1
+  }
+]
