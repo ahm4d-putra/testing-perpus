@@ -1,217 +1,268 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Admin - Perpustakaan Digital</title>
-    <meta name="description" content="Dashboard admin untuk mengelola sistem perpustakaan digital.">
-    
+    <meta
+      name="description"
+      content="Dashboard admin untuk mengelola sistem perpustakaan digital."
+    />
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="../../public/css/styles.css">
-    <link rel="stylesheet" href="../../public/css/admin.css">
-    <link rel="stylesheet" href="../../public/css/dashboard.css">
-    
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/admin.css" />
+    <link rel="stylesheet" href="../../public/css/dashboard.css" />
+
     <!-- Chart Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Admin Container -->
     <div class="admin-container">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar">
-            <div class="sidebar-brand">
-                <img src="../../public/img/logo.png" alt="Perpustakaan Logo" style="width: 40px; height: 40px;">
-                <h3 style="color: white; margin-top: 1rem;">Admin Panel</h3>
-            </div>
-            
-            <nav>
-                <ul class="sidebar-nav">
-                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="books.html"><i class="fas fa-book"></i> Manajemen Buku</a></li>
-                    <li><a href="categories.html"><i class="fas fa-tags"></i> Kategori</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-users"></i> Pengguna</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-hand-holding-heart"></i> Peminjaman</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-chart-bar"></i> Laporan</a></li>
-                    <li><a href="../landing/index.html"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
-                </ul>
-            </nav>
-        </aside>
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <img
+            src="../../public/img/logo.png"
+            alt="Perpustakaan Logo"
+            style="width: 40px; height: 40px"
+          />
+          <h3 style="color: white; margin-top: 1rem">Admin Panel</h3>
+        </div>
 
-        <!-- Main Content -->
-        <main class="admin-main">
-            <!-- Header -->
-            <div class="admin-header">
-                <div>
-                    <h1>Dashboard</h1>
-                    <p style="color: var(--text-light); margin-top: 0.5rem;">Selamat datang kembali, Admin!</p>
-                </div>
-                <div style="display: flex; gap: 1rem;">
-                    <button class="btn btn-primary" onclick="showComingSoon()">
-                        <i class="fas fa-plus"></i> Tambah Buku
-                    </button>
-                    <button class="btn btn-outline" onclick="showComingSoon()">
-                        <i class="fas fa-download"></i> Export Data
-                    </button>
-                </div>
+        <nav>
+          <ul class="sidebar-nav">
+            <li>
+              <a href="dashboard.html" class="active"
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="books.html"
+                ><i class="fas fa-book"></i> Manajemen Buku</a
+              >
+            </li>
+            <li>
+              <a href="categories.html"><i class="fas fa-tags"></i> Kategori</a>
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-users"></i> Pengguna</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-hand-holding-heart"></i> Peminjaman</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-chart-bar"></i> Laporan</a
+              >
+            </li>
+            <li>
+              <a href="../landing/index.html"
+                ><i class="fas fa-sign-out-alt"></i> Keluar</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <div class="admin-header">
+          <div>
+            <h1>Dashboard</h1>
+            <p style="color: var(--text-light); margin-top: 0.5rem">
+              Selamat datang kembali, Admin!
+            </p>
+          </div>
+          <div style="display: flex; gap: 1rem">
+            <button class="btn btn-primary" onclick="showComingSoon()">
+              <i class="fas fa-plus"></i> Tambah Buku
+            </button>
+            <button class="btn btn-outline" onclick="showComingSoon()">
+              <i class="fas fa-download"></i> Export Data
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-icon books">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="totalBooks">10</h3>
+              <p>Total Buku</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-icon borrowed">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="borrowedBooks">2</h3>
+              <p>Sedang Dipinjam</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-icon users">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="totalUsers">3</h3>
+              <p>Total Pengguna</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-icon overdue">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="overdueBooks">0</h3>
+              <p>Terlambat</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+          <!-- Chart -->
+          <div class="chart-container" data-aos="fade-up">
+            <h3 class="chart-title">Statistik Peminjaman</h3>
+            <canvas id="borrowChart"></canvas>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="recent-activity" data-aos="fade-up">
+            <div class="activity-header">
+              <h3>Aktivitas Terbaru</h3>
+            </div>
+            <div class="activity-list" id="recentActivity">
+              <!-- Activity items will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions" data-aos="fade-up">
+          <h3 style="margin-bottom: 1rem">Tindakan Cepat</h3>
+          <div class="actions-grid">
+            <div
+              class="action-card"
+              onclick="window.location.href='books.html'"
+            >
+              <div class="action-icon">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="action-info">
+                <h4>Tambah Buku</h4>
+                <p>Tambah buku baru ke koleksi</p>
+              </div>
             </div>
 
-            <!-- Stats Cards -->
-            <div class="stats-grid">
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-icon books">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="totalBooks">10</h3>
-                        <p>Total Buku</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-icon borrowed">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="borrowedBooks">2</h3>
-                        <p>Sedang Dipinjam</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-icon users">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="totalUsers">3</h3>
-                        <p>Total Pengguna</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-icon overdue">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="overdueBooks">0</h3>
-                        <p>Terlambat</p>
-                    </div>
-                </div>
+            <div
+              class="action-card"
+              onclick="window.location.href='categories.html'"
+            >
+              <div class="action-icon">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="action-info">
+                <h4>Kelola Kategori</h4>
+                <p>Kelola kategori buku</p>
+              </div>
             </div>
 
-            <!-- Dashboard Grid -->
-            <div class="dashboard-grid">
-                <!-- Chart -->
-                <div class="chart-container" data-aos="fade-up">
-                    <h3 class="chart-title">Statistik Peminjaman</h3>
-                    <canvas id="borrowChart"></canvas>
-                </div>
-                
-                <!-- Recent Activity -->
-                <div class="recent-activity" data-aos="fade-up">
-                    <div class="activity-header">
-                        <h3>Aktivitas Terbaru</h3>
-                    </div>
-                    <div class="activity-list" id="recentActivity">
-                        <!-- Activity items will be loaded here -->
-                    </div>
-                </div>
+            <div class="action-card" onclick="showComingSoon()">
+              <div class="action-icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="action-info">
+                <h4>Tambah Pengguna</h4>
+                <p>Tambah pengguna baru</p>
+              </div>
             </div>
 
-            <!-- Quick Actions -->
-            <div class="quick-actions" data-aos="fade-up">
-                <h3 style="margin-bottom: 1rem;">Tindakan Cepat</h3>
-                <div class="actions-grid">
-                    <div class="action-card" onclick="window.location.href='books.html'">
-                        <div class="action-icon">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="action-info">
-                            <h4>Tambah Buku</h4>
-                            <p>Tambah buku baru ke koleksi</p>
-                        </div>
-                    </div>
-                    
-                    <div class="action-card" onclick="window.location.href='categories.html'">
-                        <div class="action-icon">
-                            <i class="fas fa-tags"></i>
-                        </div>
-                        <div class="action-info">
-                            <h4>Kelola Kategori</h4>
-                            <p>Kelola kategori buku</p>
-                        </div>
-                    </div>
-                    
-                    <div class="action-card" onclick="showComingSoon()">
-                        <div class="action-icon">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <div class="action-info">
-                            <h4>Tambah Pengguna</h4>
-                            <p>Tambah pengguna baru</p>
-                        </div>
-                    </div>
-                    
-                    <div class="action-card" onclick="showComingSoon()">
-                        <div class="action-icon">
-                            <i class="fas fa-file-export"></i>
-                        </div>
-                        <div class="action-info">
-                            <h4>Export Laporan</h4>
-                            <p>Download laporan perpustakaan</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="action-card" onclick="showComingSoon()">
+              <div class="action-icon">
+                <i class="fas fa-file-export"></i>
+              </div>
+              <div class="action-info">
+                <h4>Export Laporan</h4>
+                <p>Download laporan perpustakaan</p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Calendar Widget -->
-            <div class="calendar-widget" style="margin-top: 2rem;" data-aos="fade-up">
-                <div class="calendar-header">
-                    <h3 id="currentMonth">November 2025</h3>
-                    <div class="calendar-nav">
-                        <button onclick="previousMonth()">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button onclick="nextMonth()">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar will be generated here -->
-                </div>
+        <!-- Calendar Widget -->
+        <div
+          class="calendar-widget"
+          style="margin-top: 2rem"
+          data-aos="fade-up"
+        >
+          <div class="calendar-header">
+            <h3 id="currentMonth">November 2025</h3>
+            <div class="calendar-nav">
+              <button onclick="previousMonth()">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button onclick="nextMonth()">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
-        </main>
+          </div>
+          <div class="calendar-grid" id="calendarGrid">
+            <!-- Calendar will be generated here -->
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Dashboard JavaScript -->
     <script src="../../public/js/dashboard.js"></script>
     <script src="../../public/js/admin.js"></script>
-    
+
     <script>
-        // Initialize AOS Animation
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-        
-        // Load dashboard data on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadDashboardStats();
-            loadRecentActivity();
-            initializeChart();
-            generateCalendar();
-        });
+      // Initialize AOS Animation
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Load dashboard data on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        loadDashboardStats();
+        loadRecentActivity();
+        initializeChart();
+        generateCalendar();
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1,177 +1,371 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perpustakaan Digital - Sistem Manajemen Perpustakaan Online</title>
-    <meta name="description" content="Temukan dan pinjam buku favorit Anda dari koleksi perpustakaan digital kami. Sistem manajemen perpustakaan modern dengan fitur pencarian dan peminjaman online.">
-    
+    <meta
+      name="description"
+      content="Temukan dan pinjam buku favorit Anda dari koleksi perpustakaan digital kami. Sistem manajemen perpustakaan modern dengan fitur pencarian dan peminjaman online."
+    />
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="../../public/css/styles.css">
-    
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
     <!-- Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="navbar container">
-            <div class="navbar-brand">
-                <img src="../../public/img/logo.png" alt="Perpustakaan Logo">
-                <span>Perpustakaan</span>
-            </div>
-            <ul class="navbar-nav">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="../user/books.html">Koleksi Buku</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="../admin/login.html" class="btn btn-outline">Admin</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar container">
+        <div class="navbar-brand">
+          <img src="../../public/img/logo.png" alt="Perpustakaan Logo" />
+          <span>Perpustakaan</span>
+        </div>
+        <ul class="navbar-nav">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="../user/books.html">Koleksi Buku</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li>
+            <a href="../admin/login.html" class="btn btn-outline">Admin</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>Selamat Datang di Perpustakaan Digital</h1>
-                <p>Temukan ribuan buku berkualitas dari berbagai kategori. Pinjam dan baca kapan saja, di mana saja dengan sistem peminjaman modern kami.</p>
-                <div class="hero-buttons">
-                    <a href="../user/books.html" class="btn btn-primary">
-                        <i class="fas fa-book"></i> Jelajahi Koleksi
-                    </a>
-                    <a href="#fitur" class="btn btn-outline">
-                        <i class="fas fa-info-circle"></i> Pelajari Fitur
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Selamat Datang di Perpustakaan Digital</h1>
+          <p>
+            Temukan ribuan buku berkualitas dari berbagai kategori. Pinjam dan
+            baca kapan saja, di mana saja dengan sistem peminjaman modern kami.
+          </p>
+          <div class="hero-buttons">
+            <a href="../user/books.html" class="btn btn-primary">
+              <i class="fas fa-book"></i> Jelajahi Koleksi
+            </a>
+            <a href="#fitur" class="btn btn-outline">
+              <i class="fas fa-info-circle"></i> Pelajari Fitur
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section id="fitur" class="features">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem;">Fitur Unggulan</h2>
-                <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto;">Nikmati berbagai fitur modern yang membuat pengalaman membaca Anda lebih menyenangkan dan praktis.</p>
-            </div>
-            
-            <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); text-align: center;">
-                    <div class="feature-icon" style="width: 4rem; height: 4rem; background: var(--primary-color); color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 style="margin-bottom: 1rem;">Pencarian Cerdas</h3>
-                    <p style="color: var(--text-light);">Cari buku berdasarkan judul, penulis, atau kategori dengan fitur pencarian yang intuitif dan cepat.</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); text-align: center;">
-                    <div class="feature-icon" style="width: 4rem; height: 4rem; background: var(--secondary-color); color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3 style="margin-bottom: 1rem;">Peminjaman Online</h3>
-                    <p style="color: var(--text-light);">Pinjam buku favorit Anda dengan mudah melalui sistem peminjaman digital yang efisien.</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); text-align: center;">
-                    <div class="feature-icon" style="width: 4rem; height: 4rem; background: var(--accent-color); color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 style="margin-bottom: 1rem;">Dashboard Admin</h3>
-                    <p style="color: var(--text-light);">Kelola perpustakaan dengan dashboard admin yang komprehensif dan mudah digunakan.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2
+            style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem"
+          >
+            Fitur Unggulan
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--text-light);
+              max-width: 600px;
+              margin: 0 auto;
+            "
+          >
+            Nikmati berbagai fitur modern yang membuat pengalaman membaca Anda
+            lebih menyenangkan dan praktis.
+          </p>
         </div>
+
+        <div
+          class="features-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+          "
+        >
+          <div
+            class="feature-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 1rem;
+              box-shadow: var(--shadow-md);
+              text-align: center;
+            "
+          >
+            <div
+              class="feature-icon"
+              style="
+                width: 4rem;
+                height: 4rem;
+                background: var(--primary-color);
+                color: white;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+                font-size: 1.5rem;
+              "
+            >
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem">Pencarian Cerdas</h3>
+            <p style="color: var(--text-light)">
+              Cari buku berdasarkan judul, penulis, atau kategori dengan fitur
+              pencarian yang intuitif dan cepat.
+            </p>
+          </div>
+
+          <div
+            class="feature-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 1rem;
+              box-shadow: var(--shadow-md);
+              text-align: center;
+            "
+          >
+            <div
+              class="feature-icon"
+              style="
+                width: 4rem;
+                height: 4rem;
+                background: var(--secondary-color);
+                color: white;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+                font-size: 1.5rem;
+              "
+            >
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem">Peminjaman Online</h3>
+            <p style="color: var(--text-light)">
+              Pinjam buku favorit Anda dengan mudah melalui sistem peminjaman
+              digital yang efisien.
+            </p>
+          </div>
+
+          <div
+            class="feature-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 1rem;
+              box-shadow: var(--shadow-md);
+              text-align: center;
+            "
+          >
+            <div
+              class="feature-icon"
+              style="
+                width: 4rem;
+                height: 4rem;
+                background: var(--accent-color);
+                color: white;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+                font-size: 1.5rem;
+              "
+            >
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem">Dashboard Admin</h3>
+            <p style="color: var(--text-light)">
+              Kelola perpustakaan dengan dashboard admin yang komprehensif dan
+              mudah digunakan.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Popular Books Section -->
-    <section class="popular-books" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem;">Buku Populer</h2>
-                <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto;">Jelajahi buku-buku paling favorit dari koleksi perpustakaan kami.</p>
-            </div>
-            
-            <div id="popular-books-grid" class="book-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- Books will be loaded here by JavaScript -->
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="../user/books.html" class="btn btn-primary">
-                    <i class="fas fa-arrow-right"></i> Lihat Semua Buku
-                </a>
-            </div>
+    <section class="popular-books" style="padding: 4rem 0">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2
+            style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem"
+          >
+            Buku Populer
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--text-light);
+              max-width: 600px;
+              margin: 0 auto;
+            "
+          >
+            Jelajahi buku-buku paling favorit dari koleksi perpustakaan kami.
+          </p>
         </div>
+
+        <div
+          id="popular-books-grid"
+          class="book-grid"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <!-- Books will be loaded here by JavaScript -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem">
+          <a href="../user/books.html" class="btn btn-primary">
+            <i class="fas fa-arrow-right"></i> Lihat Semua Buku
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="tentang" style="background: white; padding: 4rem 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" data-aos="fade-up">
-                <div>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Tentang Perpustakaan Kami</h2>
-                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                        Perpustakaan digital kami menyediakan akses mudah ke ribuan buku berkualitas dari berbagai kategori. 
-                        Dengan sistem manajemen modern, kami memudahkan proses pencarian, peminjaman, dan pengembalian buku.
-                    </p>
-                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">
-                        Misi kami adalah membuat pengetahuan dapat diakses oleh semua orang dengan cara yang praktis dan efisien. 
-                        Bergabunglah dengan komunitas pembaca kami dan mulailah petualangan literasi Anda hari ini.
-                    </p>
-                    <div style="display: flex; gap: 1rem;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">10,000+</div>
-                            <div style="color: var(--text-light);">Buku</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">5,000+</div>
-                            <div style="color: var(--text-light);">Pembaca</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">50+</div>
-                            <div style="color: var(--text-light);">Kategori</div>
-                        </div>
-                    </div>
+    <section id="tentang" style="background: white; padding: 4rem 0">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+          "
+          data-aos="fade-up"
+        >
+          <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem">
+              Tentang Perpustakaan Kami
+            </h2>
+            <p
+              style="
+                color: var(--text-light);
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Perpustakaan digital kami menyediakan akses mudah ke ribuan buku
+              berkualitas dari berbagai kategori. Dengan sistem manajemen
+              modern, kami memudahkan proses pencarian, peminjaman, dan
+              pengembalian buku.
+            </p>
+            <p
+              style="
+                color: var(--text-light);
+                line-height: 1.8;
+                margin-bottom: 2rem;
+              "
+            >
+              Misi kami adalah membuat pengetahuan dapat diakses oleh semua
+              orang dengan cara yang praktis dan efisien. Bergabunglah dengan
+              komunitas pembaca kami dan mulailah petualangan literasi Anda hari
+              ini.
+            </p>
+            <div style="display: flex; gap: 1rem">
+              <div style="text-align: center">
+                <div
+                  style="
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                  "
+                >
+                  10,000+
                 </div>
-                <div style="text-align: center;">
-                    <img src="../../public/img/logo.png" alt="Perpustakaan" style="max-width: 300px; opacity: 0.8;">
+                <div style="color: var(--text-light)">Buku</div>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                  "
+                >
+                  5,000+
                 </div>
+                <div style="color: var(--text-light)">Pembaca</div>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                  "
+                >
+                  50+
+                </div>
+                <div style="color: var(--text-light)">Kategori</div>
+              </div>
             </div>
+          </div>
+          <div style="text-align: center">
+            <img
+              src="../../public/img/logo.png"
+              alt="Perpustakaan"
+              style="max-width: 300px; opacity: 0.8"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Perpustakaan Digital. Hak Cipta Dilindungi.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.8;">Menginspirasi Dunia Melalui Literasi</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 Perpustakaan Digital. Hak Cipta Dilindungi.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8">
+          Menginspirasi Dunia Melalui Literasi
+        </p>
+      </div>
     </footer>
 
     <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    
+
     <!-- Main JavaScript -->
     <script src="../../public/js/main.js"></script>
-    
+
     <script>
-        // Initialize AOS Animation
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-        
-        // Load popular books on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPopularBooks();
-        });
+      // Initialize AOS Animation
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Load popular books on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        loadPopularBooks();
+      });
     </script>
-</body>
+  </body>
 </html>

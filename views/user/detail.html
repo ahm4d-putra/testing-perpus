@@ -1,160 +1,209 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Buku - Perpustakaan Digital</title>
-    <meta name="description" content="Lihat detail lengkap buku dan pinjam buku favorit Anda dari perpustakaan digital kami.">
-    
+    <meta
+      name="description"
+      content="Lihat detail lengkap buku dan pinjam buku favorit Anda dari perpustakaan digital kami."
+    />
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="../../public/css/styles.css">
-    
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
     <!-- Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="navbar container">
-            <div class="navbar-brand">
-                <img src="../../public/img/logo.png" alt="Perpustakaan Logo">
-                <span>Perpustakaan</span>
-            </div>
-            <ul class="navbar-nav">
-                <li><a href="../landing/index.html">Beranda</a></li>
-                <li><a href="books.html">Koleksi Buku</a></li>
-                <li><a href="../admin/login.html" class="btn btn-outline">Admin</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar container">
+        <div class="navbar-brand">
+          <img src="../../public/img/logo.png" alt="Perpustakaan Logo" />
+          <span>Perpustakaan</span>
+        </div>
+        <ul class="navbar-nav">
+          <li><a href="../landing/index.html">Beranda</a></li>
+          <li><a href="books.html">Koleksi Buku</a></li>
+          <li>
+            <a href="../admin/login.html" class="btn btn-outline">Admin</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Breadcrumb -->
-    <section style="background: var(--bg-light); padding: 1rem 0;">
-        <div class="container">
-            <nav style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-light);">
-                <a href="../landing/index.html" style="color: var(--primary-color);">Beranda</a>
-                <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
-                <a href="books.html" style="color: var(--primary-color);">Koleksi Buku</a>
-                <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
-                <span id="breadcrumbTitle">Detail Buku</span>
-            </nav>
-        </div>
+    <section style="background: var(--bg-light); padding: 1rem 0">
+      <div class="container">
+        <nav
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+          "
+        >
+          <a href="../landing/index.html" style="color: var(--primary-color)"
+            >Beranda</a
+          >
+          <i class="fas fa-chevron-right" style="font-size: 0.75rem"></i>
+          <a href="books.html" style="color: var(--primary-color)"
+            >Koleksi Buku</a
+          >
+          <i class="fas fa-chevron-right" style="font-size: 0.75rem"></i>
+          <span id="breadcrumbTitle">Detail Buku</span>
+        </nav>
+      </div>
     </section>
 
     <!-- Book Detail -->
     <section class="container">
-        <div id="bookDetail" class="book-detail" data-aos="fade-up">
-            <!-- Book detail will be loaded here -->
-        </div>
-        
-        <!-- Loading -->
-        <div id="loading" style="text-align: center; padding: 4rem 0;">
-            <div class="loading" style="margin: 0 auto 1rem;"></div>
-            <p>Memuat detail buku...</p>
-        </div>
-        
-        <!-- Not Found -->
-        <div id="notFound" style="text-align: center; padding: 4rem 0; display: none;">
-            <i class="fas fa-book-open" style="font-size: 4rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-            <h3 style="margin-bottom: 1rem;">Buku Tidak Ditemukan</h3>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">Buku yang Anda cari tidak dapat ditemukan.</p>
-            <a href="books.html" class="btn btn-primary">
-                <i class="fas fa-arrow-left"></i> Kembali ke Koleksi
-            </a>
-        </div>
+      <div id="bookDetail" class="book-detail" data-aos="fade-up">
+        <!-- Book detail will be loaded here -->
+      </div>
+
+      <!-- Loading -->
+      <div id="loading" style="text-align: center; padding: 4rem 0">
+        <div class="loading" style="margin: 0 auto 1rem"></div>
+        <p>Memuat detail buku...</p>
+      </div>
+
+      <!-- Not Found -->
+      <div
+        id="notFound"
+        style="text-align: center; padding: 4rem 0; display: none"
+      >
+        <i
+          class="fas fa-book-open"
+          style="font-size: 4rem; color: var(--text-light); margin-bottom: 1rem"
+        ></i>
+        <h3 style="margin-bottom: 1rem">Buku Tidak Ditemukan</h3>
+        <p style="color: var(--text-light); margin-bottom: 2rem">
+          Buku yang Anda cari tidak dapat ditemukan.
+        </p>
+        <a href="books.html" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i> Kembali ke Koleksi
+        </a>
+      </div>
     </section>
 
     <!-- Related Books -->
-    <section class="container" style="margin: 4rem 0;">
-        <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Buku Serupa</h2>
-        <div id="relatedBooks" class="book-grid">
-            <!-- Related books will be loaded here -->
-        </div>
+    <section class="container" style="margin: 4rem 0">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center">
+        Buku Serupa
+      </h2>
+      <div id="relatedBooks" class="book-grid">
+        <!-- Related books will be loaded here -->
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Perpustakaan Digital. Hak Cipta Dilindungi.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.8;">Menginspirasi Dunia Melalui Literasi</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 Perpustakaan Digital. Hak Cipta Dilindungi.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8">
+          Menginspirasi Dunia Melalui Literasi
+        </p>
+      </div>
     </footer>
 
     <!-- Borrow Modal -->
     <div id="borrowModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Pinjam Buku</h3>
-                <button class="modal-close" onclick="closeBorrowModal()">&times;</button>
-            </div>
-            <form id="borrowForm">
-                <div class="form-group">
-                    <label class="form-label">Nama Lengkap</label>
-                    <input type="text" id="borrowerName" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" id="borrowerEmail" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Tanggal Peminjaman</label>
-                    <input type="date" id="borrowDate" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Tanggal Pengembalian</label>
-                    <input type="date" id="returnDate" class="form-input" required>
-                </div>
-                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-                    <button type="button" class="btn btn-outline" onclick="closeBorrowModal()">Batal</button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-hand-holding-heart"></i> Pinjam Buku
-                    </button>
-                </div>
-            </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Pinjam Buku</h3>
+          <button class="modal-close" onclick="closeBorrowModal()">
+            &times;
+          </button>
         </div>
+        <form id="borrowForm">
+          <div class="form-group">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" id="borrowerName" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              id="borrowerEmail"
+              class="form-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tanggal Peminjaman</label>
+            <input type="date" id="borrowDate" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tanggal Pengembalian</label>
+            <input type="date" id="returnDate" class="form-input" required />
+          </div>
+          <div style="display: flex; gap: 1rem; justify-content: flex-end">
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="closeBorrowModal()"
+            >
+              Batal
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-hand-holding-heart"></i> Pinjam Buku
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Main JavaScript -->
     <script src="../../public/js/main.js"></script>
-    
+
     <script>
-        // Initialize AOS Animation
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-        
-        // Get book ID from URL
-        function getBookId() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('id');
+      // Initialize AOS Animation
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Get book ID from URL
+      function getBookId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("id");
+      }
+
+      // Load book detail on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const bookId = getBookId();
+        if (bookId) {
+          loadBookDetail(bookId);
+        } else {
+          showNotFound();
         }
-        
-        // Load book detail on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookId = getBookId();
-            if (bookId) {
-                loadBookDetail(bookId);
-            } else {
-                showNotFound();
-            }
-            
-            // Borrow form
-            document.getElementById('borrowForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                handleBorrowBook();
-            });
-        });
+
+        // Borrow form
+        document
+          .getElementById("borrowForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            handleBorrowBook();
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

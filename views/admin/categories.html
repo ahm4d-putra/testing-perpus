@@ -1,118 +1,190 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelola Kategori - Admin Panel</title>
-    <meta name="description" content="Kelola kategori buku perpustakaan digital.">
-    
+    <meta
+      name="description"
+      content="Kelola kategori buku perpustakaan digital."
+    />
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="../../public/css/styles.css">
-    <link rel="stylesheet" href="../../public/css/admin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/admin.css" />
+  </head>
+  <body>
     <!-- Admin Container -->
     <div class="admin-container">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar">
-            <div class="sidebar-brand">
-                <img src="../../public/img/logo.png" alt="Perpustakaan Logo" style="width: 40px; height: 40px;">
-                <h3 style="color: white; margin-top: 1rem;">Admin Panel</h3>
-            </div>
-            
-            <nav>
-                <ul class="sidebar-nav">
-                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="books.html"><i class="fas fa-book"></i> Manajemen Buku</a></li>
-                    <li><a href="categories.html" class="active"><i class="fas fa-tags"></i> Kategori</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-users"></i> Pengguna</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-hand-holding-heart"></i> Peminjaman</a></li>
-                    <li><a href="#" onclick="showComingSoon()"><i class="fas fa-chart-bar"></i> Laporan</a></li>
-                    <li><a href="../landing/index.html"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
-                </ul>
-            </nav>
-        </aside>
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <img
+            src="../../public/img/logo.png"
+            alt="Perpustakaan Logo"
+            style="width: 40px; height: 40px"
+          />
+          <h3 style="color: white; margin-top: 1rem">Admin Panel</h3>
+        </div>
 
-        <!-- Main Content -->
-        <main class="admin-main">
-            <!-- Header -->
-            <div class="admin-header">
-                <div>
-                    <h1>Kelola Kategori</h1>
-                    <p style="color: var(--text-light); margin-top: 0.5rem;">Kelola kategori buku perpustakaan</p>
-                </div>
-                <button class="btn btn-primary" onclick="openCategoryModal()">
-                    <i class="fas fa-plus"></i> Tambah Kategori
-                </button>
-            </div>
+        <nav>
+          <ul class="sidebar-nav">
+            <li>
+              <a href="dashboard.html"
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="books.html"
+                ><i class="fas fa-book"></i> Manajemen Buku</a
+              >
+            </li>
+            <li>
+              <a href="categories.html" class="active"
+                ><i class="fas fa-tags"></i> Kategori</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-users"></i> Pengguna</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-hand-holding-heart"></i> Peminjaman</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showComingSoon()"
+                ><i class="fas fa-chart-bar"></i> Laporan</a
+              >
+            </li>
+            <li>
+              <a href="../landing/index.html"
+                ><i class="fas fa-sign-out-alt"></i> Keluar</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-            <!-- Categories Grid -->
-            <div id="categoriesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
-                <!-- Categories will be loaded here -->
-            </div>
-        </main>
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <div class="admin-header">
+          <div>
+            <h1>Kelola Kategori</h1>
+            <p style="color: var(--text-light); margin-top: 0.5rem">
+              Kelola kategori buku perpustakaan
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="openCategoryModal()">
+            <i class="fas fa-plus"></i> Tambah Kategori
+          </button>
+        </div>
+
+        <!-- Categories Grid -->
+        <div
+          id="categoriesGrid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+          "
+        >
+          <!-- Categories will be loaded here -->
+        </div>
+      </main>
     </div>
 
     <!-- Add/Edit Category Modal -->
     <div id="categoryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Tambah Kategori Baru</h3>
-                <button class="modal-close" onclick="closeCategoryModal()">&times;</button>
-            </div>
-            <form id="categoryForm">
-                <input type="hidden" id="categoryId">
-                
-                <div class="form-group">
-                    <label class="form-label">Nama Kategori</label>
-                    <input type="text" id="categoryName" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Deskripsi</label>
-                    <textarea id="categoryDescription" class="form-textarea" rows="3" required></textarea>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
-                    <button type="button" class="btn btn-outline" onclick="closeCategoryModal()">Batal</button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Simpan Kategori
-                    </button>
-                </div>
-            </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Tambah Kategori Baru</h3>
+          <button class="modal-close" onclick="closeCategoryModal()">
+            &times;
+          </button>
         </div>
+        <form id="categoryForm">
+          <input type="hidden" id="categoryId" />
+
+          <div class="form-group">
+            <label class="form-label">Nama Kategori</label>
+            <input type="text" id="categoryName" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Deskripsi</label>
+            <textarea
+              id="categoryDescription"
+              class="form-textarea"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: flex-end;
+              margin-top: 2rem;
+            "
+          >
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="closeCategoryModal()"
+            >
+              Batal
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Simpan Kategori
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Admin JavaScript -->
     <script src="../../public/js/admin.js"></script>
-    
+
     <script>
-        // Initialize AOS Animation
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-        
-        // Load categories on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAdminCategories();
-            
-            // Category form
-            document.getElementById('categoryForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                saveCategory();
-            });
-        });
+      // Initialize AOS Animation
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Load categories on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        loadAdminCategories();
+
+        // Category form
+        document
+          .getElementById("categoryForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            saveCategory();
+          });
+      });
     </script>
-</body>
+  </body>
 </html>
